@@ -29,7 +29,6 @@ Este projeto faz parte dos meus **estudos e portfólio**, servindo como base par
 
 ## 📂 Estrutura do Projeto
 
-```bash
 📦 Loja-Notebooks
 ├── 📁 node_modules
 ├── 📁 prisma
@@ -44,9 +43,10 @@ Este projeto faz parte dos meus **estudos e portfólio**, servindo como base par
 ├── package-lock.json
 └── tsconfig.json
 
-##  Diagrama ER (PlantUML)
+---
 
-```plantuml
+## 📊 Diagrama ER (PlantUML)
+
 @startuml
 entity "Loja_Notebook" as notebooks {
   *id : Int <<PK>>
