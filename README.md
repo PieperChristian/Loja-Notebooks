@@ -175,7 +175,7 @@ ___
 Sinta-se à vontade para abrir issues e enviar pull requests.
 Sugestões e melhorias são muito bem-vindas 🚀.
 ___
-##📄 Licença
+## 📄 Licença
 Este projeto está sob a licença MIT.
 ```
 ---
