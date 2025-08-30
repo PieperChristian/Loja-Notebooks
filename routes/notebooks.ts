@@ -6,6 +6,7 @@ const prisma = new PrismaClient({
     log: ["query"]
 })
 
+// consulta todos os notebooks
 router.get("/", async (req, res) => {
     try {
         const notebooks = await prisma.loja_Notebook.findMany({
@@ -17,6 +18,7 @@ router.get("/", async (req, res) => {
     }
 })
 
+// consulta um notebook pelo id
 router.get('/:id', async (req, res) => {
     const id = Number(req.params.id)
     if (Number.isNaN(id)) {
@@ -36,6 +38,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// filtros de consulta de notebooks pelo preço, marca, estoque e desconto
 router.get('/filtro/preco', async (req, res) => {
     try {
         const notebooks = await prisma.loja_Notebook.findMany({
@@ -52,6 +55,7 @@ router.get('/filtro/preco', async (req, res) => {
     }
 })
 
+// média de preço e soma do estoque
 router.get('/filtro/dados', async (req, res) => {
     try {
         const precoMedio = await prisma.loja_Notebook.aggregate({
@@ -68,6 +72,7 @@ router.get('/filtro/dados', async (req, res) => {
     }
 })
 
+// filtro por marca e preço máximo
 router.get('/filtro/:marca/:preco', async (req, res) => {
     const { marca, preco } = req.params
 
@@ -92,6 +97,7 @@ router.get('/filtro/:marca/:preco', async (req, res) => {
     }
 })
 
+// filtro por marca e soma do estoque
 router.get('/filtro/estoque', async (req, res) => {
     try {
         const notebooks = await prisma.loja_Notebook.groupBy({
@@ -106,6 +112,7 @@ router.get('/filtro/estoque', async (req, res) => {
     }
 })
 
+// filtro por marca e desconto
 router.get('/filtro/desconto', async (req, res) => {
     try {
         const notesSemDesc = await prisma.loja_Notebook.findMany()
@@ -121,6 +128,7 @@ router.get('/filtro/desconto', async (req, res) => {
     }
 })
 
+// cadastro de um novo notebook
 router.post("/", async (req, res) => {
     const { modelo, tam_tela, marca, processador, memoria, preco, qtd_estoque } = req.body
 
@@ -138,6 +146,7 @@ router.post("/", async (req, res) => {
     }
 })
 
+// atualização de um notebook pelo id
 router.put("/:id", async (req, res) => {
     const { id } = req.params
 
@@ -165,6 +174,7 @@ router.put("/:id", async (req, res) => {
     }
 })
 
+// deleção de um notebook pelo id
 router.delete("/:id", async (req, res) => {
     const { id } = req.params
 
