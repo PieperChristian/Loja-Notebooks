@@ -43,3 +43,28 @@ Este projeto faz parte dos meus **estudos e portfólio**, servindo como base par
 ├── package.json
 ├── package-lock.json
 └── tsconfig.json
+
+##  Diagrama ER (PlantUML)
+
+```plantuml
+@startuml
+entity "Loja_Notebook" as notebooks {
+  *id : Int <<PK>>
+  --
+  modelo : String (100)
+  tam_tela : Decimal(3,1)
+  marca : String (100)
+  processador : Processador
+  memoria : Int
+  preco : Decimal(10,2)
+  qtd_estoque : Int
+}
+
+enum "Processador" {
+  Intel
+  AMD
+}
+
+notebooks::processador --> Processador
+@enduml
+\`\`\`
