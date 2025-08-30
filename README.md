@@ -177,8 +177,3 @@ Sugestões e melhorias são muito bem-vindas 🚀.
 ___
 ## 📄 Licença
 Este projeto está sob a licença MIT.
-```
----
-
-👉 Quer que eu também crie uma **seção com diagrama ER gerado automaticamente** a partir do Prisma (com imagem ou PlantUML) para incluir no README? Isso deixa o projeto ainda mais atrativo para portfólio.
-```
