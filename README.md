@@ -46,8 +46,28 @@ Necessário já ter préviamente instalado na máquina:
 ```
 ---
 
+### 📋 Tabela: notebooks
+
+| Campo | Tipo | Descrição | Restrições |
+|:---|:---|:---|:---|
+| id | Int | Identificador único | Chave primária, auto incremento |
+| modelo | String | Modelo do notebook | Máximo 100 caracteres |
+| tam_tela | Decimal | Tamanho da tela em polegadas | Padrão 0, até 3 dígitos e 1 casa decimal |
+| marca | String | Fabricante do notebook | Máximo 100 caracteres |
+| processador | Enum | Tipo de processador | Valores: Intel ou AMD |
+| memoria | Int | Quantidade de memória RAM | Padrão 0 |
+| preco | Decimal | Preço do notebook | Precisão (10,2) |
+| qtd_estoque | Int | Quantidade disponível em estoque | - |
+
+### 🎯 Enum: Processador
+
+Valores permitidos para o campo `processador`:
+
+**Intel**
+**AMD**
+
 ## 🔖 Modelo Prisma (schema.prisma)
-```bash
+```prisma
 model Notebook {
   id            Int      @id @default(autoincrement())
   modelo        String   @db.VarChar(100)
@@ -81,7 +101,7 @@ npm install
 ```
 ### 3. Configurar variáveis de ambiente
 Crie um arquivo .env na raiz do projeto com algo como:
-```bash
+```env
 DATABASE_URL="mysql://root:Sua_Senha_Do_MySQL@localhost:3306/loja_notebooks"
 ```
 ### 4. Criar o banco de dados
@@ -97,10 +117,68 @@ npx prisma migrate dev --name init
 ```bash
 npm run dev
 ```
+---
+## 📡 Rotas da API
+### 🔹 Listar todos os notebooks
+```http
+GET /notebooks
+```
+### Response
+```json
+[
+  {
+    "id": 1,
+    "modelo": "Inspiron 15",
+    "tam_tela": 15.6,
+    "marca": "Dell",
+    "processador": "Intel",
+    "memoria": 8,
+    "preco": 3500.00,
+    "qtd_estoque": 10
+  }
+]
+```
 
+### 🔹 Buscar notebook por ID
+```http
+GET /notebooks/:id
+```
+Exemplo:
+```http
+GET /notebooks/1
+```
+### Response
+```json
+{
+  "id": 1,
+  "modelo": "Inspiron 15",
+  "tam_tela": 15.6,
+  "marca": "Dell",
+  "processador": "Intel",
+  "memoria": 8,
+  "preco": 3500.00,
+  "qtd_estoque": 10
+}
+```
+---
+## 🛠️ Funcionalidades
+### Implementadas
+	•	Listar notebooks
+	•	Buscar notebook por ID
+	•	Criar notebook
+	•	Atualizar notebook
+	•	Deletar notebook
+### Futuras
+	•	Autenticação e autorização
+___
+## 🤝 Contribuição
+Sinta-se à vontade para abrir issues e enviar pull requests.
+Sugestões e melhorias são muito bem-vindas 🚀.
+___
+##📄 Licença
+Este projeto está sob a licença MIT.
+```
+---
 
-
-
-```bash
-
+👉 Quer que eu também crie uma **seção com diagrama ER gerado automaticamente** a partir do Prisma (com imagem ou PlantUML) para incluir no README? Isso deixa o projeto ainda mais atrativo para portfólio.
 ```
