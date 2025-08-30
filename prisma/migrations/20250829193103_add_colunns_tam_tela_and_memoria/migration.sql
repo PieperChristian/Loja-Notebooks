@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `notebooks` ADD COLUMN `memoria` INTEGER NOT NULL DEFAULT 0,
+    ADD COLUMN `tam_tela` DECIMAL(3, 1) NOT NULL DEFAULT 0;
