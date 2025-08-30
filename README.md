@@ -20,6 +20,7 @@ Este projeto faz parte dos meus **estudos e portfólio**, servindo como base par
 ---
 
 ## 🛠 Tecnologias
+Necessário já ter préviamente instalado na máquina:
 - **Node.js** + **TypeScript**  
 - **Express.js** (framework web)  
 - **Prisma ORM** (mapeamento objeto-relacional)  
@@ -45,7 +46,7 @@ Este projeto faz parte dos meus **estudos e portfólio**, servindo como base par
 ```
 ---
 
-## 📝 Exemplo de uso com Prisma
+## 🔖 Modelo Prisma (schema.prisma)
 ```bash
 model Notebook {
   id            Int      @id @default(autoincrement())
@@ -64,4 +65,42 @@ enum Processador {
   Intel
   AMD
 }
+```
+---
+
+## ⚙️ Instalação e execução
+
+### 1. Clonar o repositório 
+```bash
+git clone git@github.com:PieperChristian/Loja-Notebooks.git
+cd Loja-Notebooks
+```
+### 2. Instalar dependências
+```bash
+npm install
+```
+### 3. Configurar variáveis de ambiente
+Crie um arquivo .env na raiz do projeto com algo como:
+```bash
+DATABASE_URL="mysql://root:Sua_Senha_Do_MySQL@localhost:3306/loja_notebooks"
+```
+### 4. Criar o banco de dados
+Acesse o MySQL via terminal e digite:
+```bash
+create database if not exists loja_notebooks
+```
+### 5. Executar migrations
+```bash
+npx prisma migrate dev --name init
+```
+### 6. Rodar a aplicação
+```bash
+npm run dev
+```
+
+
+
+
+```bash
+
 ```
