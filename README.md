@@ -28,7 +28,7 @@ Este projeto faz parte dos meus **estudos e portfólio**, servindo como base par
 ---
 
 ## 📂 Estrutura do Projeto
-
+```bash
 📦 Loja-Notebooks
 ├── 📁 node_modules
 ├── 📁 prisma
@@ -42,12 +42,12 @@ Este projeto faz parte dos meus **estudos e portfólio**, servindo como base par
 ├── package.json
 ├── package-lock.json
 └── tsconfig.json
-
+```
 ---
 
 ## 📊 Diagrama ER (PlantUML)
 
-@startuml
+```@startuml
 entity "Loja_Notebook" as notebooks {
   *id : Int <<PK>>
   --
@@ -67,4 +67,4 @@ enum "Processador" {
 
 notebooks::processador --> Processador
 @enduml
-\`\`\`
+```
