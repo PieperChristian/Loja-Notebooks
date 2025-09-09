@@ -175,5 +175,8 @@ ___
 Sinta-se à vontade para abrir issues e enviar pull requests.
 Sugestões e melhorias são muito bem-vindas 🚀.
 ___
+## 🤝 Colaboradores
+<a href="https://github.com/PieperChristian"><img src="https://github.com/PieperChristian.png" width="45" height="45"></a> &nbsp;
+___
 ## 📄 Licença
 Este projeto está sob a licença MIT.
